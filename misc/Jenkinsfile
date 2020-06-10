@@ -12,8 +12,5 @@ node {
    }
    stage('docker build/push') {
      app = docker.build("jodykpw/docker-nodejs-demo:latest")
-     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-       app.push('latest')
-     }
    }
 }
